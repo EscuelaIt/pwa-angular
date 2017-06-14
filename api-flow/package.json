@@ -1,0 +1,26 @@
+{
+  "name": "api-flow",
+  "version": "1.0.0",
+  "description": "API para control de flujo de movimientos de caja",
+  "main": "index.js",
+  "author": "@albertobasalo",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/AcademiaBinaria/angular2",
+    "type": "git"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "web-push": "^3.2.2",
+    "base-64": "^0.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
+}
