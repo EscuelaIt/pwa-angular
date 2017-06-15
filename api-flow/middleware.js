@@ -10,7 +10,7 @@ module.exports.useMiddleware = app => {
     }));
 
     app.use(bodyParser.json());
-    app.use(express.static(__dirname + './../1-service-worker/cash-flow/dist'));
+    app.use(express.static(__dirname + './../4-manifest/cash-flow/dist'));
     app.use((req, res, next) => {
         if (req.method == 'POST' && req.body) {
             console.log(`${req.method} ${req.originalUrl} ${JSON.stringify(req.body)}`);

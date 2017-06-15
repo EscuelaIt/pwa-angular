@@ -10,8 +10,9 @@ A web with a service worker
  http://127.0.0.1:3030
  http://127.0.0.1:3030/index.html
 
-
- 55 - 66 - 97 - 75
+**lighthouse:** 27 - 0 - 100 - 85
+**lighthouse:** 36 - 46 - 100 - 85
+**lighthouse:** 55 - 66 - 97 - 75
 - New Files on /dist
  - worker-basic.min.js
  - sw-register.HASH.bundle.js

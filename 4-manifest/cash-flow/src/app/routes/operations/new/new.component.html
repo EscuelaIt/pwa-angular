@@ -1,0 +1,52 @@
+<header>
+  <h5>Create and Save New Operation</h5>
+</header>
+<main>
+  <form [formGroup]="operationForm"
+        (ngSubmit)="onSubmit()"
+        class="container">
+    <section name="description-control">
+      <label for="description">Description:</label>
+      <input formControlName="description"
+             type="text" />
+      <small *ngIf="operationForm.get('description').invalid"
+             class="float-right">
+             Description is required
+      </small>
+    </section>
+    <section name="amount-control">
+      <label for="amount">Amount:</label>
+      <input formControlName="amount"
+             type="number" />
+      <small *ngIf="mustShowErrors('amount')"
+             class="float-right">
+             Amount has errors: {{ getControlErrors('amount') }}
+      </small>
+    </section>
+    <section name="date-control">
+      <label for="date">Date:</label>
+      <input formControlName="date"
+             type="date" />
+      <small *ngIf="mustShowErrors('date')"
+             class="float-right">
+             Date has errors: {{ getControlErrors('date') }}
+      </small>
+    </section>
+    <button type="submit"
+            [disabled]="operationForm.invalid">Save</button>
+  </form>
+  <aside class="container">
+    <em class="row">Form Value: </em>
+    <code class="row">
+      <strong>{{ operationForm.value | json }}</strong>
+    </code>
+    <em class="row">Operation Model: </em>
+    <code class="row">
+      <strong>{{ operation | json }}</strong>
+    </code>
+    <em class="row">From Status: </em>
+    <code class="row">
+    <strong>{{ operationForm.status | json }}</strong>
+  </code>
+  </aside>
+</main>
