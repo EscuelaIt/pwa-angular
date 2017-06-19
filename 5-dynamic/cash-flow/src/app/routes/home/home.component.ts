@@ -6,8 +6,8 @@ import { Http } from '@angular/http';
   template: `
     <section class="container">
       <header >
-        <h3>4-manifest</h3>
-        <h5> 19:06 </h5>
+        <h3>5-dynamic</h3>
+        <h5> 19:42 </h5>
       </header>
       <dl>
         <dt>Num Items:</dt>

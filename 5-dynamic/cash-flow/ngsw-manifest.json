@@ -1,0 +1,49 @@
+{
+  "static.ignore": [
+    "^\/assets\/ignore.*$"
+  ],
+  "routing": {
+    "index": "/index.html",
+    "routes": {
+      "/": {
+        "prefix": false
+      },
+      "/about": {
+        "prefix": false
+      }
+    }
+  },
+  "dynamic": {
+    "group": [
+      {
+        "name": "types",
+        "urls": {
+          "/types": {
+            "match": "prefix"
+          }
+        },
+        "cache": {
+          "optimizeFor": "performance",
+          "strategy": "lru",
+          "maxAgeMs": 3600000,
+          "maxEntries": 20
+        }
+      },
+      {
+        "name": "items",
+        "urls": {
+          "/items": {
+            "match": "prefix"
+          }
+        },
+        "cache": {
+          "optimizeFor": "freshness",
+          "strategy": "fifo",
+          "maxAgeMs": 3600000,
+          "maxEntries": 100,
+          "networkTimeoutMs": 1000
+        }
+      }
+    ]
+  }
+}
