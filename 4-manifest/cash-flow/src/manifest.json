@@ -4,7 +4,7 @@
   "name": "Cash Flow",
   "scope": "/",
   "display": "standalone",
-  "start_url": "./index.html",
+  "start_url": "./",
   "short_name": "C-F",
   "theme_color": "#0078a0",
   "description": "PWA demo, simple cash flow app",

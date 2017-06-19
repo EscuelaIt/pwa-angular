@@ -7,7 +7,7 @@ import { Http } from '@angular/http';
     <section class="container">
       <header >
         <h3>4-manifest</h3>
-        <h5> 19:59 </h5>
+        <h5> 17:32 </h5>
       </header>
       <dl>
         <dt>Num Items:</dt>

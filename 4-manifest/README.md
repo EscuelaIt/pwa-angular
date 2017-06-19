@@ -9,9 +9,12 @@ Manifest
 
  ```
 
-Load offline
-http://127.0.0.1:3030/index.html
+Add to home screen
 http://127.0.0.1:3030
+
+https://manifest-validator.appspot.com/.
+chrome://flags/#bypass-app-banner-engagement-checks
+chrome://flags/#enable-add-to-shelf
 
 **lighthouse:** 27 - 0 - 100 - 85
 **lighthouse:** 36 - 46 - 100 - 85
