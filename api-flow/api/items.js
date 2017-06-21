@@ -14,8 +14,7 @@ module.exports = (app, url) => {
       let newItem = req.body
       newItem._id = new Date().getTime().toString();
       items.push(newItem);
-      const notification = newItem.amount + ' €';
-      app.sendNotification(notification, newItem._id);
+      app.sendNotification(newItem.amount + '€ more!!!', newItem._id);
       res.status(201).json(newItem);
     })
     .delete((req, res) => {
@@ -44,7 +43,7 @@ module.exports = (app, url) => {
     .delete((req, res) => {
       let indexFound = getIndexById(req.params._id);
       if (indexFound >= 0) {
-        items.splice(indexFound, 1)
+        items.splice(indexFound, 1);
         res.status(204).send();
       } else {
         res.status(404).send();

@@ -8,14 +8,16 @@ module.exports = app => {
   var pushSubscriptions = [];
 
   app.post('/webpush', function (req, res, next) {
-    console.log('Web push subscription object received: ', req.body.subscription);
-    if (req.body.action === 'subscribe') {
-      susbcribe(req.body.subscription);
-    } else if (req.body.action === 'unsubscribe') {
-      unsubscribe(req.body.subscription);
+    const subscription = req.body.subscription;
+    const action = req.body.action;
+    console.log('Web push subscription object received: ', subscription);
+    if (action === 'subscribe') {
+      susbcribe(subscription);
+    } else if (action === 'unsubscribe') {
+      unsubscribe(subscription);
     }
     res.send({
-      text: req.body.action + ' OK for ' + JSON.stringify(req.body.subscription),
+      text: action + ' OK for ' + JSON.stringify(subscription),
       status: '200'
     });
   })
@@ -24,17 +26,14 @@ module.exports = app => {
     payload = getPayload(body, tag);
     pushSubscriptions.forEach(pushSubscription => {
       webPush.sendNotification(pushSubscription, payload)
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.error('Push error: ', error);
-        })
+        .then(response => console.log('sent: ', response))
+        .catch(error => console.error('Push error: ', error))
     });
   }
 
   function getPayload(body, tag) {
-    var notificationData = {};
+    const localIcon = '/assets/icons/chrome/chrome-extensionmanagementpage-48-48.png';
+    const notificationData = {};
     notificationData.notification = {
       actions: [
         {
@@ -49,7 +48,7 @@ module.exports = app => {
       title: 'Cash-Flow',
       body: body,
       dir: 'auto',
-      icon: '/assets/icons/chrome/chrome-extensionmanagementpage-48-48.png',
+      icon: localIcon,
       lang: 'en',
       renotify: true,
       requireInteraction: true,

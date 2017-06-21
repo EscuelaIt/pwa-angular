@@ -1,20 +1,11 @@
-Manifest
+Dynamic
 ```
- manifest.json
- http://appimagegenerator-pre.azurewebsites.net/
- update .angular-cli.json
- index.html
- 
+
  npm run bprod
 
  ```
 
-Add to home screen
-http://127.0.0.1:3030
-
-https://manifest-validator.appspot.com/.
-chrome://flags/#bypass-app-banner-engagement-checks
-chrome://flags/#enable-add-to-shelf
+dynamic on ngsw-manifest.json
 
 **lighthouse:** 27 - 0 - 100 - 85
 **lighthouse:** 36 - 46 - 100 - 85

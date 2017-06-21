@@ -30,5 +30,5 @@ module.exports = (app, url) => {
     typeId: 2
   }];
 
-  app.get(`${url}`, (req, res) => res.json(categories));
+  app.get(url, (req, res) => res.json(categories));
 }

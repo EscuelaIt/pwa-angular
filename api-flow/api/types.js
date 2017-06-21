@@ -8,5 +8,5 @@ module.exports = (app, url) => {
     text: 'Expense'
   }];
 
-  app.get(`${url}`, (req, res) => res.json(types));
+  app.get(url, (req, res) => res.json(types));
 }
