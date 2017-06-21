@@ -25,6 +25,7 @@ module.exports = app => {
   app.sendNotification = function sendNotification(body, tag) {
     payload = getPayload(body, tag);
     pushSubscriptions.forEach(pushSubscription => {
+      console.log('sending: ', pushSubscription);
       webPush.sendNotification(pushSubscription, payload)
         .then(response => console.log('sent: ', response))
         .catch(error => console.error('Push error: ', error))
